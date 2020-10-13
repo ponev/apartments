@@ -1,0 +1,107 @@
+$red: #cd1900;
+
+.apartment {
+  display: flex;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+
+  &__info {
+    position: relative;
+  }
+
+  &__like {
+    position: absolute;
+    top: 0; right: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid $red;
+    outline: none;
+    background: #fff;
+    cursor: pointer;
+
+    i {
+      font-size: 20px;
+      color: $red;
+      vertical-align: -7px;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 7px 0px $red;
+    }
+
+    &-active {
+      background: $red;
+      i {
+        color: #fff
+      }
+    }
+  }
+
+  &__image {
+    width: 300px;
+    height: 225px;
+    object-fit: cover;
+    margin-right: 30px;
+    border-radius: 10px;
+  }
+
+  &__title {
+    color: #0026f8;
+    margin: 0 60px 35px 0;
+  }
+
+  &__address {
+    font-style: normal;
+    font-size: 14px;
+    color: #808080;
+    margin-bottom: 15px;
+  }
+
+  &__full-price {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__price-info {
+    font-size: 14px;
+    color: #808080;
+    margin-bottom: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0px 3px 5px 0px #ccc;
+  }
+
+
+  @media (max-width: 991px) {
+    width: 48%;
+    flex-direction: column;
+
+    &__image {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    &__title {
+      height: 27px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__price-info {
+      margin-bottom: 0;
+    }
+
+    &__description {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
